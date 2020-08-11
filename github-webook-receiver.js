@@ -32,7 +32,7 @@ http
                 console.log(`Push detected for repository ${repository}...`);
 
                 try {
-                    exec(`cd /home/pi/wa/${repository} && git pull && systemctl restart ${repository}`);
+                    exec(`cd /home/pi/wa/${repository} && git pull && npm install && systemctl restart ${repository}`);
                 } catch (error) {
                     console.log(error);
                 }
