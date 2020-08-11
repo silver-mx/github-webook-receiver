@@ -19,7 +19,8 @@
   "dependencies": {
     "crypt": "0.0.2",
     "dotenv": "^8.2.0",
-    "http": "0.0.1-security"
+    "http": "0.0.1-security",
+    "pushover-notifications": "^1.2.2"
   },
   "devDependencies": {
     "jasmine": "^3.6.1"

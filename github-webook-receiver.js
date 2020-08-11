@@ -8,6 +8,21 @@ const {
     exec
 } = require('child_process');
 
+const Push = require('pushover-notifications');
+
+const p = new Push({
+    user: process.env['PUSHOVER_USER'],
+    token: process.env['PUSHOVER_TOKEN'],
+});
+
+const msg = {
+    message: 'TBD', // required
+    title: 'github - webhook - receiver error',
+    sound: 'magic',
+    device: 'raspberry',
+    priority: 1
+}
+
 const SECRET = process.env['SECRET'];
 
 http
@@ -22,7 +37,7 @@ http
 
             const isAllowed = req.headers['x-hub-signature'] === signature;
 
-            const body = JSON.parse(chunk);
+            const body = getBodyAsJson(chunk);
 
             const isMaster = body.ref === 'refs/heads/master';
 
@@ -42,3 +57,16 @@ http
         res.end();
     })
     .listen(9530);
+
+const getBodyAsJson = (chunk) => {
+    try {
+        return JSON.parse(chunk);
+    } catch (error) {
+        msg.message = error;
+        p.send(msg, (err, result) => {
+            if (err) {
+                throw err
+            }
+        });
+    }
+};
