@@ -17,10 +17,11 @@
   },
   "homepage": "https://github.com/silver-mx/github-webook-receiver#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "crypt": "0.0.2",
     "dotenv": "^8.2.0",
-    "http": "0.0.1-security",
-    "pushover-notifications": "^1.2.2"
+    "express": "^4.17.1",
+    "http": "0.0.1-security"
   },
   "devDependencies": {
     "jasmine": "^3.6.1"
