@@ -1,0 +1,27 @@
+{
+  "name": "github-webook-receiver",
+  "version": "1.0.0",
+  "description": "A simple nodejs application to receive webhooks events from Github",
+  "main": "github-webhook-receiver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silver-mx/github-webook-receiver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silver-mx/github-webook-receiver/issues"
+  },
+  "homepage": "https://github.com/silver-mx/github-webook-receiver#readme",
+  "dependencies": {
+    "crypt": "0.0.2",
+    "dotenv": "^8.2.0",
+    "http": "0.0.1-security"
+  },
+  "devDependencies": {
+    "jasmine": "^3.6.1"
+  }
+}
