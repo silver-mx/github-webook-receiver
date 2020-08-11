@@ -68,5 +68,7 @@ const getBodyAsJson = (chunk) => {
                 throw err
             }
         });
+
+        console.error(error);
     }
 };
