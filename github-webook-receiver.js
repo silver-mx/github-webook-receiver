@@ -47,4 +47,8 @@ app.post('/', (req, res) => {
     }
 
     res.sendStatus(200);
-}).listen(9530);
+});
+
+let server = app.listen(9530);
+
+module.exports = server;
